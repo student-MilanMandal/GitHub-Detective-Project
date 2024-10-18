@@ -108,8 +108,13 @@ function updateProfile(data) {
     page.innerText = data.blog ? data.blog : 'Not Available';
     page.href = data.blog ? data.blog : '#'; // ? if present : if not present
     twitter.innerText =
-      data.twitter_username == null ? 'Not Available' : data.twitter_username;
-    twitter.href = data.twitter_username == null ? '#' : data.twitter_username;
+      data.twitter_username == null
+        ? 'Not Available'
+        : `${data.twitter_username}`;
+    twitter.href =
+      data.twitter_username == null
+        ? '#'
+        : `https://twitter.com/${data.twitter_username}`;
     company.innerText = data.company == null ? 'Not Available' : data.company;
 
     searchbar.classList.toggle('active');
